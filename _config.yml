@@ -78,3 +78,12 @@ plugins:
 - jekyll-feed
 - jekyll-seo-tag
 - jekyll-archives
+  choincnppp:
+    name: Cho Youngjun
+    display_name: youngjun
+    avatar: 'assets/images/author/choincnppp.png'
+    email: whdudwns7777@naver.com
+    web: https://github.com/choincnp
+    description: "안녕하세요! 반갑습니다 :) `GenAI`에 관심이 많아요.
+
+!!"
