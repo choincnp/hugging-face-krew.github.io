@@ -78,3 +78,10 @@ plugins:
 - jekyll-feed
 - jekyll-seo-tag
 - jekyll-archives
+  youngjun:
+    name: Cho Youngjun
+    display_name: youngjun
+    avatar: 'assets/images/logo.png'
+    email: whdudwns7777@naver.com
+    web: https://github.com/choincnp
+    description: "```text"
