@@ -1,13 +1,9 @@
-
-
-
-
 ---
 layout: post
-title: "Agent Leaderboard: Evaluating AI Agents in Multi-Domain Scenarios"
+title: "에이전트 리더보드: 다중 도메인 시나리오에서의 AI 에이전트 평가"
 author: jimin
 categories: [Agent]
-image: assets/images/blog/posts/2025-11-17-agent-leaderboard/thumbnail.png
+image: assets/images/blog/posts/2025-11-17-temp/thumbnail.png ## temp 수정
 ---
 
 * TOC
@@ -17,117 +13,125 @@ image: assets/images/blog/posts/2025-11-17-agent-leaderboard/thumbnail.png
 _이 글은 Hugging Face 블로그의 [Agent Leaderboard: Evaluating AI Agents in Multi-Domain Scenarios](https://huggingface.co/blog/pratikbhavsar/agent-leaderboard)를 한국어로 번역한 글입니다._
 
 ---
-# Agent Leaderboard: Evaluating AI Agents in Multi-Domain Scenarios
 
-Jensen Huang has called AI agents the "digital workforce" — and he is not the only tech CEO who thinks agents represent the next significant breakthrough for AI. Satya Nadella believes agents will fundamentally transform how businesses operate.
+# 에이전트 리더보드: 다중 도메인 시나리오에서의 AI 에이전트 평가
 
-These agents can interact with external tools and APIs, dramatically expanding their practical applications. However, they are far from perfect, and evaluating their performance in this domain has been challenging due to the complexity of potential interactions.
+젠슨 황(Jensen Huang)은 AI 에이전트를 “디지털 노동력(digital workforce)”이라고 불렀습니다. 그는 유일한 의견을 가진 CEO가 아닙니다. 사티아 나델라(Satya Nadella) 역시 에이전트가 비즈니스 운영 방식을 근본적으로 바꿀 것이라고 믿고 있습니다.  
 
-Our Agent Leaderboard evaluates agent performance using Galileo's tool selection quality metric to clearly understand how different LLMs handle tool-based interactions across various dimensions.
+이러한 에이전트들은 외부 도구와 API와 상호작용할 수 있어, 실질적인 응용 가능성을 크게 확장합니다. 그러나 여전히 완벽하지 않으며, 복잡한 상호작용 특성 때문에 이들의 성능을 평가하는 일은 어려웠습니다.  
 
-We built this leaderboard to answer a straightforward question: **"How do AI agents perform in real-world business scenarios?"** While academic benchmarks tell us about technical capabilities, we want to know which models work for varied use cases.
+우리의 **Agent Leaderboard(에이전트 리더보드)**는 Galileo의 **도구 선택 품질 지표(tool selection quality metric)**를 사용해 다양한 차원에서 LLM들이 도구 기반 상호작용을 어떻게 처리하는지 명확히 평가합니다.  
 
+우리가 이 리더보드를 만든 이유는 단순합니다:  
+**“AI 에이전트는 실제 비즈니스 시나리오에서 얼마나 잘 작동하는가?”**  
+학술적 벤치마크가 기술적 역량을 알려준다면, 우리는 다양한 실제 사용 사례에서 어떤 모델이 유용한지를 알고자 합니다.  
 
-## What Sets this Agent Evaluation Leaderboard Apart? 🎯
+---
 
-[huggingface.co/spaces/galileo-ai/agent-leaderboard](https://huggingface.co/spaces/galileo-ai/agent-leaderboard)
+## 이 에이전트 평가 리더보드의 차별점은? 🎯
 
-Current evaluation frameworks address specific niches. **BFCL** excels in academic domains like mathematics, entertainment, and education, **τ-bench** specializes in retail and airline scenarios, **xLAM** covers data generation across 21 domains, and **ToolACE** focuses on API interactions in 390 domains.  
-Our leaderboard synthesizes these datasets into a comprehensive evaluation framework that spans multiple domains and real-world use cases.
+🔗 [huggingface.co/spaces/galileo-ai/agent-leaderboard](https://huggingface.co/spaces/galileo-ai/agent-leaderboard)
 
-We provide actionable insights into how these models handle edge cases and safety considerations by incorporating various benchmarks and testing scenarios.  
-We analyze cost-effectiveness, provide implementation guidance, and assess business impact — factors crucial for organizations deploying AI agents.  
-Our leaderboard is designed to help teams decide which models best suit their specific AI agent's needs and constraints.
+기존 평가 프레임워크들은 특정 영역에 집중되어 있습니다.  
+**BFCL**은 수학·엔터테인먼트·교육 등 학술 영역에 강하고, **τ-bench**는 소매 및 항공 시나리오에 특화되어 있으며, **xLAM**은 21개 도메인에 걸친 데이터 생성에 초점을 맞춥니다. **ToolACE**는 390개 도메인에서의 API 상호작용에 중점을 둡니다.  
+우리의 리더보드는 이러한 데이터셋들을 통합해 **다중 도메인 및 실제 사용 사례를 포괄하는 종합 평가 프레임워크**를 제공합니다.  
 
-New LLMs come out very often.We plan to update our benchmark every month to keep this in sync with ongoing model releases.
+우리는 다양한 벤치마크와 테스트 시나리오를 통합하여 모델들이 **엣지 케이스와 안전성**을 어떻게 다루는지에 대한 실질적인 통찰을 제공합니다.  
+또한 **비용 효율성**, **구현 가이드라인**, **비즈니스 영향력** 등을 분석하여 실제 조직에서 AI 에이전트를 배포할 때 필수적인 정보를 제공합니다.  
+즉, 각 팀이 자신들의 에이전트 요구사항과 제약 조건에 가장 적합한 모델을 선택할 수 있도록 돕는 리더보드입니다.  
 
+🗓️ 새로운 LLM들이 매우 자주 출시되므로,  
+우리는 **매달 벤치마크를 업데이트**하여 최신 모델 릴리즈와 동기화할 예정입니다.  
 
-## Key Insights 💡
+---
 
-Our analysis of **17 leading LLMs** revealed intriguing patterns in how AI agents handle real-world tasks.  
-We stress-tested both private and open-source models against **14 diverse benchmarks**, measuring everything from simple API calls to complex multi-tool interactions.
+## 핵심 인사이트 💡
 
-Our findings challenge conventional wisdom about model performance and provide practical insights for teams building with AI agents.
+우리가 분석한 **17개의 주요 LLM**은 실제 업무 과제에서 에이전트가 어떻게 작동하는지 흥미로운 패턴을 보여주었습니다.  
+우리는 **14개 다양한 벤치마크**를 기반으로, 간단한 API 호출부터 복잡한 멀티툴 상호작용까지 폭넓게 스트레스 테스트를 수행했습니다.  
 
+그 결과는 기존의 모델 성능에 대한 통념을 깨고, AI 에이전트를 구축하는 팀들에게 실질적인 인사이트를 제공합니다.  
 
-## Complexity of Tool Calling ⚙️
+---
 
-The complexity of tool calling extends far beyond simple API invocations.  
-Various scenarios challenge AI agents' ability to make appropriate decisions about tool usage:
+## 도구 호출의 복잡성 ⚙️
 
-### Scenario Recognition
-When an agent encounters a query, it must first determine if tool usage is warranted.  
-Information may already exist in the conversation history, making tool calls redundant.  
-Alternatively, available tools might be insufficient or irrelevant to the task, requiring the agent to acknowledge limitations rather than force inappropriate tool usage.
+도구 호출의 복잡성은 단순한 API 호출을 훨씬 넘어섭니다.  
+다양한 시나리오에서 AI 에이전트는 도구 사용 여부와 방식을 올바르게 판단해야 합니다.  
 
-### Tool Selection Dynamics
-Tool selection isn't binary — it involves both **precision** and **recall**.  
-An agent might correctly identify one necessary tool while missing others (**recall issue**) or select appropriate tools alongside unnecessary ones (**precision issue**).  
-While suboptimal, these scenarios represent different severity levels of selection errors.
+### 시나리오 인식
+에이전트가 쿼리를 받을 때, 먼저 도구 사용이 필요한지 판단해야 합니다.  
+대화 내에 이미 충분한 정보가 존재할 수도 있고, 사용할 수 있는 도구가 적절하지 않을 수도 있습니다.  
+이 경우 에이전트는 부적절한 도구 호출을 시도하기보다, **제한을 인식하고 명확히 전달**해야 합니다.  
 
-### Parameter Handling
-Even with correct tool selection, argument handling introduces additional complexity.  
-Agents must:
+### 도구 선택의 역학
+도구 선택은 단순히 맞다/틀리다의 문제가 아닙니다 — **정밀도(precision)**와 **재현율(recall)** 모두를 포함합니다.  
+에이전트가 필요한 도구 중 일부만 선택하면 재현율 문제가 발생하고, 불필요한 도구까지 함께 호출하면 정밀도 문제가 생깁니다.  
+이러한 오류들은 서로 다른 수준의 심각도를 지니며, 각각 다른 유형의 판단 실수를 나타냅니다.  
 
-- Provide all required parameters with the correct naming  
-- Handle optional parameters appropriately  
-- Maintain parameter value accuracy  
-- Format arguments according to tool specifications  
+### 매개변수 처리
+도구를 올바르게 선택했더라도, 인자(argument) 처리 과정에서 또 다른 복잡성이 발생합니다.  
+에이전트는 다음을 수행해야 합니다:
 
-### Sequential Decision Making
-Multi-step tasks require agents to:
+- 필요한 모든 매개변수를 올바른 이름으로 제공  
+- 선택적 매개변수를 적절히 처리  
+- 매개변수 값의 정확성 유지  
+- 도구 사양에 맞게 인자 형식화  
 
-- Determine optimal tool calling sequence  
-- Handle interdependencies between tool calls  
-- Maintain context across multiple operations  
-- Adapt to partial results or failures  
+### 순차적 의사결정
+다단계 작업에서는 다음이 필요합니다:
 
-These complexities highlight why **tool selection quality** shouldn't be viewed as a simple metric,  
-but rather as a **multifaceted evaluation** of an agent's decision-making capabilities in real-world scenarios.
+- 도구 호출의 최적 순서 결정  
+- 호출 간 의존성 처리  
+- 여러 작업 간의 컨텍스트 유지  
+- 부분적 결과나 실패에 대한 적응  
 
+이러한 복잡성 때문에 **도구 선택 품질(TSQ)**은 단순 지표가 아니라,  
+**실제 환경에서의 의사결정 능력을 종합적으로 평가하는 척도**로 봐야 합니다.  
 
-## Methodology 🔍
+---
 
-Our evaluation process follows a systematic approach to ensure a comprehensive and fair assessment of AI agents:
+## 방법론 🔍
 
-### 1. Model Selection
-We begin by curating a diverse set of leading language models, including both proprietary and open-source implementations.  
-This selection ensures we capture the full spectrum of available technologies.
+우리의 평가 프로세스는 AI 에이전트를 공정하고 체계적으로 평가하기 위해 다음과 같은 단계를 따릅니다.
 
-### 2. Agent Configuration
-Each model is configured as an agent using a standardized system prompt and given access to a consistent set of tools.  
-This standardization ensures that performance differences reflect inherent model capabilities rather than prompt engineering.
+### 모델 선정
+상용 및 오픈소스 모델을 포함해 다양한 언어 모델을 선정합니다.  
+이를 통해 현존 기술의 폭넓은 스펙트럼을 반영합니다.  
 
-### 3. Metric Definition
-We established **Tool Selection Quality (TSQ)** as our primary evaluation metric, focusing on both the correctness of tool selection and the quality of parameter usage.  
-This metric was carefully designed to capture real-world performance requirements.
+### 에이전트 구성
+모든 모델은 **표준화된 시스템 프롬프트**와 **동일한 도구 세트**를 사용하여 에이전트로 구성됩니다.  
+이를 통해 성능 차이가 단순한 프롬프트 조정이 아닌, **모델의 내재된 능력 차이**에서 비롯되도록 보장합니다.  
 
-### 4. Dataset Curation
-We strategically sampled from established benchmarking datasets to create a balanced, multi-domain evaluation suite.  
-This dataset tests everything from basic function calls to complex multi-turn interactions, ensuring comprehensive coverage of agent capabilities.
+### 지표 정의
+주요 평가 지표로 **도구 선택 품질(TSQ)**을 설정했습니다.  
+이는 도구 선택의 정확성과 매개변수 사용의 품질을 모두 고려합니다.  
 
-### 5. Scoring System
-The final performance score is calculated as an **equally weighted average** across all datasets.  
-This approach ensures that no single capability dominates the overall assessment, providing a balanced view of agent performance.
+### 데이터셋 구성
+기존 벤치마크 데이터셋에서 샘플을 전략적으로 선정하여 **균형 잡힌 다중 도메인 평가 세트**를 구성했습니다.  
+단순한 함수 호출부터 복잡한 다중 대화 상호작용까지 폭넓은 상황을 테스트합니다.  
 
-Through this structured approach, we provide insights that directly translate to real-world implementation decisions.
+### 점수 계산
+최종 점수는 모든 데이터셋의 성능을 **동일 가중 평균**하여 산출됩니다.  
+이를 통해 특정 기능이 전체 점수를 왜곡하지 않도록 하고, 모델 전반의 균형 잡힌 능력을 평가합니다.  
 
+이 구조화된 접근을 통해, 우리는 실제 비즈니스 의사결정에 직접 도움이 되는 인사이트를 제공합니다.  
 
-## How Do We Measure Agent's Performance? 📊
+---
 
-### How it Works?
+## 에이전트 성능은 어떻게 측정하나? 📊
 
-As we saw above, tool calling evaluation requires robust measurement across diverse scenarios.  
-We developed the **Tool Selection Quality (TSQ)** metric to assess agents' tool call performance, evaluating **tool selection accuracy** and the **effectiveness of parameter usage**.  
-This framework determines whether agents appropriately utilize tools for tasks while also identifying situations where tool usage is unnecessary.
+### 작동 방식
 
-The evaluation uses **GPT-4o with ChainPoll** to assess tool selection decisions.  
-Multiple independent judgments are gathered for each interaction, with the final score representing the **proportion of positive assessments**.  
-Each judgment includes a detailed explanation, providing transparency into the evaluation process.
+앞서 본 것처럼, 도구 호출 평가는 다양한 시나리오에서의 견고한 측정이 필요합니다.  
+우리는 **도구 선택 품질(TSQ)** 지표를 통해, 에이전트의 **도구 선택 정확도**와 **매개변수 활용 효율성**을 평가했습니다.  
+이 프레임워크는 도구 사용이 적절한지, 불필요한 사용은 없는지를 모두 검증합니다.  
 
+평가는 **GPT-4o + ChainPoll**을 사용하여 수행됩니다.  
+각 상호작용마다 여러 개의 독립적인 판단이 수집되며, 최종 점수는 **긍정적 평가 비율**로 계산됩니다.  
+모든 판단에는 상세한 설명이 포함되어 투명성을 확보합니다.  
 
-
-```
+```python
 import promptquality as pq
 
 df = pd.read_parquet(file_path, engine="fastparquet")
@@ -146,7 +150,7 @@ evaluate_handler = pq.GalileoPromptCallback(
 llm = llm_handler.get_llm(model, temperature=0.0, max_tokens=4000)
 system_msg = {
             "role": "system",
-            "content": 'Your job is to use the given tools to answer the query of human. If there is no relevant tool then reply with "I cannot answer the question with given tools". If tool is available but sufficient information is not available, then ask human to get the same. You can call as many tools as you want. Use multiple tools if needed. If the tools need to be called in a sequence then just call the first tool.',
+            "content": '당신의 임무는 주어진 도구를 사용해 사용자의 질문에 답하는 것입니다. 관련 도구가 없으면 "주어진 도구로는 대답할 수 없습니다."라고 응답하세요. 필요한 정보가 부족하면 사용자에게 요청하세요. 필요한 경우 여러 도구를 호출할 수 있습니다. 순차 호출이 필요하면 첫 번째 도구부터 호출하세요.',
         }
 
 for row in df.itertuples():
@@ -159,116 +163,136 @@ for row in df.itertuples():
         )
 
 evaluate_handler.finish()
-
 ```
 
+### 왜 도구 호출 평가에 LLM이 필요한가?
 
-### Why We Need an LLM for Tool Call Evaluation?
+LLM 기반 평가 접근법은 다양한 시나리오에 걸친 포괄적인 평가를 가능하게 합니다.
+이 접근법은 맥락이 불충분할 때 적절히 대응하는지, 즉 도구 사용 전에 추가 정보가 필요한 상황을 인식하는지를 검증합니다.
+다중 도구 시나리오에서는 필요한 모든 도구가 올바른 순서로 식별되고 사용되는지를 확인합니다.
+긴 맥락(Long Context) 상황에서는 대화 초반의 관련 정보를 제대로 고려하는지를 평가합니다.
+또한, 도구가 없거나 부적절한 경우, 모델이 잘못된 동작을 강제로 수행하지 않고 올바르게 도구 사용을 회피하는지를 확인합니다.
 
-The LLM-based evaluation approach enables comprehensive assessment across diverse scenarios.  
-It verifies appropriate handling of insufficient context, recognizing when more information is needed before tool use.  
-For multi-tool scenarios, it checks if all necessary tools are identified and used in the correct sequence.  
-In long-context situations, it ensures relevant information from earlier in the conversation is considered.  
-When tools are absent or inappropriate, it confirms the agent correctly abstains from tool use rather than forcing an incorrect action.
+이 지표에서 성공하기 위해서는 고도화된 능력이 필요합니다.
+즉, 필요한 경우 올바른 도구를 선택하고, 정확한 매개변수를 제공하며, 여러 도구를 효과적으로 조율하고, 불필요한 도구 사용을 인식해야 합니다.
+예를 들어, 필요한 모든 정보가 이미 대화 내에 존재하거나 사용할 수 있는 적절한 도구가 없다면, 올바른 행동은 도구 사용을 하지 않는 것입니다.
 
-Success in this metric requires sophisticated capabilities:  
-selecting the right tools when needed, providing correct parameters, coordinating multiple tools effectively, and recognizing situations where tool use is unnecessary.  
-For instance, if all required information exists in conversation history or if no suitable tools are available, the correct action is to abstain from tool use.
+## 데이터셋 구성 📁
 
----
-
-## What is in the Datasets? 📁
-
-The evaluation framework employs a carefully curated set of benchmarking datasets from **BFCL (Berkeley Function Calling Leaderboard)**, **τ-bench (Tau benchmark)**, **xLAM**, and **ToolACE**.  
-Each is designed to test specific aspects of agent capabilities.  
-Understanding these dimensions is necessary for both model evaluation and practical application development.
+이 평가 프레임워크는 BFCL (Berkeley Function Calling Leaderboard), τ-bench (Tau benchmark), xLAM, ToolACE의 신중하게 선별된 벤치마크 데이터셋을 사용합니다.
+각 데이터셋은 에이전트의 특정 능력을 검증하기 위해 설계되었습니다.
+이러한 평가 차원을 이해하는 것은 모델 평가와 실제 응용 개발 모두에서 필수적입니다.
 
 
-### Single-Turn Capabilities
+### 단일 턴(Single-Turn) 능력
 
-**Basic Tool Usage** scenarios evaluate the fundamental ability to understand tool documentation, handle parameters, and execute basic function calls. This testing dimension focuses on response formatting and error handling in straightforward interactions. This capability is critical for simple automation tasks like setting reminders or fetching basic information in practical applications.  
+**기본 도구 사용 (Basic Tool Usage)** 시나리오는 모델이 도구 문서를 이해하고, 매개변수를 처리하며, 기본적인 함수 호출을 수행할 수 있는지를 평가합니다.  
+이 영역은 단순한 상호작용에서의 **응답 형식**과 **에러 처리**에 중점을 둡니다.  
+이 능력은 일정 설정이나 간단한 정보 조회 같은 **기본 자동화 작업**에서 매우 중요합니다.  
 `[xlam_single_tool_single_call]`
 
-**Tool Selection** scenarios assess a model's ability to choose the right tool from multiple options. This dimension examines how well models understand tool documentation and make decisions about tool applicability. For practical applications, this capability is essential when building multi-purpose agents.  
+**도구 선택 (Tool Selection)** 시나리오는 모델이 여러 도구 중에서 올바른 도구를 선택할 수 있는지를 평가합니다.  
+이는 도구 문서 이해 능력과 도구의 적합성을 판단하는 결정을 검증합니다.  
+이 능력은 **다목적 에이전트 구축** 시 필수적입니다.  
 `[xlam_multiple_tool_single_call]`
 
-**Parallel Execution** scenarios examine a model's capability to orchestrate multiple tools simultaneously. This dimension is particularly critical for efficiency in real-world applications.  
+**병렬 실행 (Parallel Execution)** 시나리오는 모델이 여러 도구를 동시에 조율할 수 있는지를 평가합니다.  
+이 능력은 실제 환경에서의 효율성 확보에 매우 중요합니다.  
 `[xlam_multiple_tool_multiple_call]`
 
-**Tool Reuse** scenarios evaluate the efficient handling of batch operations and parameter variations. This aspect is particularly important for batch processing scenarios in practical applications.  
+**도구 재사용 (Tool Reuse)** 시나리오는 모델이 배치 작업이나 매개변수 변형을 효율적으로 처리할 수 있는지를 평가합니다.  
+이는 **대량 처리(batch processing)** 상황에서 특히 중요합니다.  
 `[xlam_single_tool_multiple_call]`
 
 ---
 
-### Error Handling and Edge Cases
+### 오류 처리 및 엣지 케이스
 
-**Irrelevance Detection** scenarios test a model's ability to recognize tool limitations and communicate appropriately when available tools don't match user needs. This capability is fundamental to user experience and system reliability.  
+**무관성 감지 (Irrelevance Detection)** 시나리오는 모델이 도구의 한계를 인식하고, 사용자의 요청에 부합하지 않을 때 적절히 응답할 수 있는지를 테스트합니다.  
+이 능력은 사용자 경험과 시스템 신뢰성의 핵심 요소입니다.  
 `[BFCL_v3_irrelevance]`
 
-**Missing Tool Handling** scenarios examine how gracefully models handle situations where required tools are unavailable, including their ability to communicate limitations and suggest alternatives.  
+**누락된 도구 처리 (Missing Tool Handling)** 시나리오는 필요한 도구가 없을 때 모델이 얼마나 우아하게(Gracefully) 대응하는지를 평가합니다.  
+이에는 한계 설명이나 대체 제안 능력도 포함됩니다.  
 `[xlam_tool_miss, BFCL_v3_multi_turn_miss_func]`
 
+---
 
-### Context Management
+### 맥락 관리 (Context Management)
 
-**Long Context** scenarios evaluate a model's ability to maintain context in extended interactions and understand complex instructions. This capability is crucial for complex workflows and extended interactions.  
+**긴 맥락 (Long Context)** 시나리오는 모델이 긴 대화 내에서 문맥을 유지하고 복잡한 지시를 이해할 수 있는지를 평가합니다.  
+이 능력은 복잡한 워크플로우나 장시간의 상호작용에 매우 중요합니다.  
 `[tau_long_context, BFCL_v3_multi_turn_long_context]`
 
+---
 
-### Multi-Turn Interactions
+### 다중 턴(Multi-Turn) 상호작용
 
-**Basic Conversation** scenarios test conversational function calling abilities and context retention across turns. This fundamental capability is essential for interactive applications.  
+**기본 대화 (Basic Conversation)** 시나리오는 모델이 여러 턴에 걸쳐 함수 호출을 수행하고 문맥을 유지할 수 있는지를 테스트합니다.  
+이 기본 능력은 **대화형 애플리케이션**에서 필수적입니다.  
 `[BFCL_v3_multi_turn_base_single_func_call, toolace_single_func_call]`
 
-**Complex Interaction** scenarios combine multiple challenges to test overall robustness and complex scenario handling.  
+**복합 상호작용 (Complex Interaction)** 시나리오는 여러 도전 요소를 결합해 모델의 **전반적 강건성(robustness)**을 평가합니다.  
 `[BFCL_v3_multi_turn_base_multi_func_call, BFCL_v3_multi_turn_composite]`
 
+---
 
-### Parameter Management
+### 매개변수 관리 (Parameter Management)
 
-**Missing Parameters** scenarios examine how models handle incomplete information and interact with users to gather necessary parameters.  
+**누락된 매개변수 (Missing Parameters)** 시나리오는 모델이 불완전한 정보를 처리하고 사용자와 상호작용하여 필요한 매개변수를 수집할 수 있는지를 평가합니다.  
 `[BFCL_v3_multi_turn_miss_param]`
 
 ---
-## Practical Implications for AI Engineers 🛠️
 
-Our evaluation reveals several key considerations for creating robust and efficient systems when developing AI agents. Let's break down the essential aspects:
+## AI 엔지니어를 위한 실용적 시사점 🛠️
 
+우리의 평가 결과는 견고하고 효율적인 AI 에이전트 시스템을 구축할 때 고려해야 할 핵심 사항을 보여줍니다.  
+핵심 포인트를 나눠보면 다음과 같습니다.
 
-### Model Selection and Performance
-Advanced models that score above **0.85** in composite tasks are crucial for handling complex workflows, though most models can manage basic tools effectively.  
-When dealing with **parallel operations**, it's important to examine execution scores for each specific task rather than relying on overall performance metrics.
+---
 
+### 모델 선택과 성능
+복합 작업에서 **0.85 이상**의 점수를 기록하는 고급 모델은 복잡한 워크플로우를 처리하는 데 중요합니다.  
+대부분의 모델은 기본적인 도구 작업은 잘 수행하지만, **병렬 작업**을 다룰 때는 전체 점수보다 **개별 태스크별 실행 성능**을 세밀히 살펴야 합니다.
 
-### Context and Error Management
-Implementing **context summarization strategies** is essential for models that struggle with long-context scenarios.  
-Strong **error handling mechanisms** become particularly crucial when working with models that show weaknesses in irrelevance detection or parameter handling.  
-Consider implementing **structured workflows** to guide parameter collection for models that need additional support in this area.
+---
 
+### 맥락 및 오류 관리
+**맥락 요약(context summarization)** 전략은 긴 문맥 처리에 약한 모델에서 필수적입니다.  
+**오류 처리 메커니즘**은 무관성 감지나 매개변수 처리에서 약점을 보이는 모델에 특히 중요합니다.  
+이 경우 **구조화된 워크플로우**를 구현해 매개변수 수집 과정을 보완하는 것이 좋습니다.
 
-### Safety and Reliability
-Implement **robust tool access controls**, especially for models that struggle to detect irrelevant operations.  
-For models with inconsistent performance, adding **validation layers** can help maintain reliability.  
-It's also essential to build **error recovery systems**, particularly for models that have difficulty handling missing parameters.
+---
 
+### 안전성과 신뢰성
+무관한 동작을 감지하지 못하는 모델을 위해 **도구 접근 제어**를 강화해야 합니다.  
+성능이 불안정한 모델은 **검증(validation) 계층**을 추가하여 신뢰성을 높일 수 있습니다.  
+또한, **오류 복구 시스템(error recovery system)**을 구축하는 것도 중요합니다.
 
-### Optimizing System Performance
-Design your **workflow architecture** based on each model's ability to handle parallel execution and long-context scenarios.  
-When implementing **batching strategies**, consider how well the model **reuses tools**, as this can significantly impact efficiency.
+---
 
+### 시스템 성능 최적화
+각 모델의 **병렬 처리 및 긴 맥락 처리 능력**에 맞춰 워크플로우를 설계하세요.  
+**배치 전략(batch strategy)**을 구현할 때는 모델의 **도구 재사용 능력**을 고려하는 것이 효율성 향상에 도움이 됩니다.
 
-### Current State of AI Models
-While **proprietary models** currently lead in overall capabilities, **open-source alternatives** are rapidly improving.  
-Simple tool interactions are becoming increasingly reliable across all models, though challenges remain in **complex multi-turn interactions** and **long-context scenarios**.
+---
 
-This varied performance across different aspects emphasizes the importance of aligning **model selection with your specific use case requirements**, rather than choosing based on general performance metrics alone.
+### 현재 AI 모델의 수준
+현재는 **상용(proprietary)** 모델이 전반적인 능력에서 우위를 점하고 있지만, **오픈소스 대안(open-source alternatives)** 또한 빠르게 발전하고 있습니다.  
+간단한 도구 상호작용은 대부분의 모델에서 안정적으로 작동하지만, **복잡한 다중 턴 상호작용**과 **긴 문맥 처리**는 여전히 도전 과제로 남아 있습니다.
 
-We hope you found this helpful and would love to hear from you on **LinkedIn**, **Twitter**, and **GitHub**.
+이러한 다양한 성능 차이는 **특정 사용 사례에 맞는 모델 선택**이 중요함을 보여줍니다.  
+즉, 일반적인 성능 지표보다는 **실제 적용 맥락**에 기반해 모델을 선택해야 합니다.
 
+---
 
-## Citation 📄
+우리는 이 정보가 도움이 되길 바라며, **LinkedIn**, **Twitter**, 그리고 **GitHub**에서 여러분의 의견을 기다리고 있습니다.
 
-You can cite the leaderboard with:
+---
+
+## 인용 📄
+
+아래 방식으로 리더보드를 인용할 수 있습니다:
 
 ```bibtex
 @misc{agent-leaderboard,
@@ -280,56 +304,80 @@ You can cite the leaderboard with:
 }
 ```
 
-## More Insights on Model Performance 📈
-
-
-### Reasoning Models
-A notable observation from our analysis concerns **reasoning-focused models**. While **o1** and **o3-mini** demonstrated excellent integration with function calling capabilities — performing at **0.876** and **0.847** respectively — we encountered significant challenges with other reasoning models.  
-
-Specifically, **DeepSeek V3** and **Deepseek R1**, despite their impressive general capabilities, were **excluded** from our leaderboard due to their limited function calling support.
-
-This exclusion wasn't a reflection of model quality but rather a **conscious decision** based on the models' documented limitations. Both models’ official documentation explicitly state that **function calling is not supported** in their current releases. Rather than attempting to engineer workarounds or present potentially misleading metrics, we chose to **await future releases** with native function calling support.
-
-This experience highlights that **function calling is a specialized capability** that shouldn't be assumed to exist in all high-performance language models. Even models with exceptional reasoning capabilities may not inherently support structured function calling without explicit design and training for this capability.  
-➡️ It is best to **evaluate the model for your specific use case** before selecting it.
+## 모델 성능에 대한 추가 인사이트 📈
 
 ---
 
-### Elite Tier Performance (≥ 0.9)
-Gemini-2.0-flash maintains its leadership with an exceptional 0.938 average score. It demonstrates remarkable consistency across all evaluation categories, with particularly strong showings in composite scenarios (0.95) and irrelevance detection (0.98). At $0.15/$0.6 per million tokens, it offers a compelling balance of performance and cost-effectiveness.
+### 추론 모델 (Reasoning Models)
 
-Following closely, GPT-4o achieves 0.900, excelling in multiple tool handling (0.99) and parallel execution (0.98), though at a significantly higher price point of $2.5/$10 per million tokens.
+우리의 분석에서 주목할 만한 점은 **추론 중심(reasoning-focused)** 모델들이었습니다.
+**o1**과 **o3-mini**는 각각 **0.876**과 **0.847**의 성능으로 함수 호출(Function Calling) 기능을 매우 훌륭하게 통합한 것으로 나타났습니다.
+그러나 다른 추론 모델들에서는 상당한 어려움을 발견했습니다.
 
+특히 **DeepSeek V3**와 **DeepSeek R1**은 전반적인 성능이 매우 뛰어남에도 불구하고, **함수 호출 기능 지원의 한계로 인해 리더보드에서 제외**되었습니다.
 
+이 결정은 모델의 품질이 낮아서가 아니라, 모델의 **공식 문서에서 명시된 한계**를 기반으로 한 **의도적인 선택(conscious decision)**이었습니다.
+두 모델 모두 공식 문서에서 현재 릴리즈 버전에서는 **함수 호출을 지원하지 않는다**고 명확히 명시하고 있습니다.
+우리는 억지로 우회 기능을 구현하거나 오해의 소지가 있는 지표를 공개하기보다는, **함수 호출이 기본적으로 지원되는 향후 릴리즈를 기다리기로 결정했습니다.**
 
-### High Performance Segment (0.85–0.9)
-The high-performance segment features several strong contenders. Gemini-1.5-flash maintains impressive metrics at 0.895, particularly excelling in irrelevance detection (0.98) and single function performance (0.99). Gemini-1.5-pro, despite being priced higher at $1.25/$5 per million tokens, achieves 0.885 with notably strong performance in composite tasks (0.93) and single tool execution (0.99).
+이 경험은 **함수 호출(function calling)**이 모든 고성능 언어 모델에 자동으로 포함된 일반 기능이 아니라, **명시적으로 설계되고 학습되어야 하는 특수 기능**임을 보여줍니다.
+즉, 뛰어난 추론 능력을 가진 모델이라 하더라도, 구조적 함수 호출을 수행하려면 해당 기능에 대한 **명시적 설계와 학습**이 필요합니다.
+➡️ 따라서 모델을 선택하기 전에 **자신의 사용 사례(use case)**에 맞게 모델을 직접 평가하는 것이 가장 바람직합니다.
 
-o1, despite its premium pricing at $15/$60 per million tokens, justifies its position with a 0.876 score and industry-leading long-context performance (0.98). The newly included o3-mini demonstrates competitive performance at 0.847, with strong showings in single function calls (0.975) and irrelevance detection (0.97), offering a balanced option at $1.1/$4.4 per million tokens.
+---
 
+### 엘리트 티어 성능 (≥ 0.9)
 
-### Mid Tier Capabilities (0.8–0.85)
-GPT-4o-mini maintains strong efficiency at 0.832, particularly impressive in parallel tool usage (0.99) and tool selection, though it struggles with long-context scenarios (0.51).
+* **Gemini-2.0-flash**는 평균 **0.938**이라는 **탁월한 점수**로 선두를 유지하고 있습니다.
 
-Among open source models, mistral-small-2501 leads at 0.832, showing remarkable improvement over its predecessor with strong long-context handling (0.92) and tool selection capabilities (0.99). Qwen-72b follows closely at 0.817, matching private models in irrelevance detection (0.99) and exhibiting strong long-context handling (0.92). Mistral-large demonstrated solid tool selection (0.97) but facing challenges in composite tasks (0.76).
+  * 복합 시나리오(**0.95**)와 무관성 감지(**0.98**)에서 강력한 성능을 보입니다.
+  * 비용: **백만 토큰당 $0.15 / $0.6**, 즉 **성능과 비용 효율의 균형이 뛰어납니다.**
 
-Claude-sonnet achieves 0.801 with standout performance in tool miss detection (0.92) and single function handling (0.955).
+* **GPT-4o**는 **0.900**으로 바로 뒤를 잇습니다.
 
-### Base Tier Models (< 0.8)
-This tier includes models that work in specific areas despite lower overall scores. Claude-haiku offers balanced performance at 0.765 with cost-effective pricing of $0.8/$4 per million tokens.
+  * 다중 도구 처리(**0.99**)와 병렬 실행(**0.98**)에서 탁월하지만,
+  * **백만 토큰당 $2.5 / $10**으로 **비용이 더 높은 편**입니다.
 
-The open-source Llama-70B shows promise at 0.774, particularly in multiple tool scenarios (0.99), while smaller variants like Mistral-small (0.750), Ministral-8b (0.689), and Mistral-nemo (0.661) provide efficient options for basic tasks.
+---
 
-## Acknowledgements 🙏
+### 고성능 구간 (0.85–0.9)
 
-We extend our sincere gratitude to the creators of the benchmark datasets that made this evaluation framework possible:
+* **Gemini-1.5-flash**: 0.895 — 무관성 감지(**0.98**)와 단일 함수 수행(**0.99**)에서 우수한 성능.
+* **Gemini-1.5-pro**: 0.885 — 복합 작업(**0.93**)과 단일 도구 실행(**0.99**)에서 강력하며, **백만 토큰당 $1.25 / $5**의 가격대를 가짐.
+* **o1**: 0.876 — 업계 최고 수준의 **긴 맥락(long-context) 처리 성능 (0.98)**을 보이지만, **비용이 높음 ($15 / $60 per million tokens)**.
+* **o3-mini**: 0.847 — 단일 함수 호출(**0.975**)과 무관성 감지(**0.97**)에서 강점을 보이며, **$1.1 / $4.4 per million tokens**로 균형 잡힌 가격대.
 
-- [BFCL](https://gorilla.cs.berkeley.edu/leaderboard.html): Thanks to the Berkeley AI Research team for their comprehensive dataset evaluating function calling capabilities.
+---
 
-- [τ-bench](https://github.com/sierra-research/tau-bench): Thanks to the Sierra Research team for developing this benchmark focusing on real-world tool use scenarios.
+### 중간 티어 성능 (0.8–0.85)
 
-- [xLAM](https://www.salesforce.com/blog/xlam-large-action-models/): Thanks to the Salesforce AI Research team for their extensive Large Action Model dataset covering 21 domains.
+* **GPT-4o-mini**: 0.832 — 병렬 도구 사용(**0.99**)과 도구 선택에서 우수하지만, 긴 맥락 처리(**0.51**)에 약함.
+* **mistral-small-2501**: 0.832 — **오픈소스 모델 중 최고 성능**, 긴 맥락 처리(**0.92**)와 도구 선택(**0.99**) 향상.
+* **Qwen-72b**: 0.817 — **무관성 감지 (0.99)**와 **긴 맥락 (0.92)**에서 상용 모델 수준의 성능.
+* **Mistral-large**: **도구 선택 (0.97)**은 견고하지만 **복합 작업 (0.76)**에서는 어려움.
+* **Claude-sonnet**: 0.801 — **도구 누락 감지 (0.92)**와 **단일 함수 처리 (0.955)**에서 강력함.
 
-- [ToolACE](https://arxiv.org/abs/2409.00920): Thanks to the team for their comprehensive API interaction dataset spanning 390 domains.
+---
 
-These datasets have been instrumental in creating a comprehensive evaluation framework for tool-calling capabilities in language models.
+### 기본 티어 모델 (< 0.8)
+
+이 구간의 모델들은 전체 평균 점수는 낮지만, 특정 영역에서는 충분히 활용할 수 있습니다:
+
+* **Claude-haiku**: 0.765 — 균형 잡힌 성능과 **비용 효율성 ($0.8 / $4 per million tokens)**.
+* **Llama-70B**: 0.774 — **다중 도구 시나리오 (0.99)**에서 강력함.
+* **Mistral-small (0.750)**, **Ministral-8b (0.689)**, **Mistral-nemo (0.661)** — **기본 작업(Basic tasks)**에 효율적.
+
+---
+
+## 감사의 글 🙏
+
+이 평가 프레임워크를 가능하게 한 **벤치마크 데이터셋 제작자들**께 진심으로 감사를 드립니다.
+
+* **BFCL** — 함수 호출 능력을 종합적으로 평가할 수 있는 데이터셋을 만든 **Berkeley AI Research** 팀에 감사드립니다.
+* **τ-bench** — 실제 도구 사용 시나리오에 초점을 맞춘 벤치마크를 개발한 **Sierra Research** 팀에 감사드립니다.
+* **xLAM** — 21개 도메인에 걸친 방대한 **Large Action Model** 데이터셋을 구축한 **Salesforce AI Research** 팀에 감사드립니다.
+* **ToolACE** — 390개 이상의 도메인을 포괄하는 **API 상호작용 데이터셋**을 개발한 **ToolACE 팀**에 감사드립니다.
+
+이 데이터셋들은 언어 모델의 **도구 호출 능력(tool-calling capabilities)**을 평가하기 위한
+**포괄적이고 체계적인 평가 프레임워크**를 구축하는 데 핵심적인 역할을 했습니다.
+
