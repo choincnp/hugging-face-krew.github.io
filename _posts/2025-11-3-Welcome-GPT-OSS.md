@@ -51,7 +51,7 @@ AI의 이점을 널리 접근할 수 있도록 하겠다는 사명에 따라 이
 # Inference Providers를 통한 API 액세스
 OpenAI GPT OSS 모델은 Hugging Face의 [Inference Providers](https://huggingface.co/docs/inference-providers/en/index) 서비스를 통해 접근할 수 있어, 동일한 자바스크립트나 파이썬 코드로 지원되는 모든 프로바이더에 요청을 보낼 수 있습니다. 이것은 OpenAI 공식 데모인 [gpt-oss.com](http://gpt-oss.com)을 구동하는 것과 동일한 인프라이며, 여러분의 프로젝트에서도 활용할 수 있습니다.
 
-다음은 파이썬과 초고속 Cerebras 프로바이더를 사용하는 예제입니다. 더 많은 정보와 추가 예제는 [모델 카드의 inference providers 섹션](https://huggingface.co/openai/gpt-oss-120b?inference_api=true&inference_provider=auto&language=python&client=openai)과 [gpt-oss 모델들을 위한 가이드](https://huggingface.co/docs/inference-providers/guides/gpt-oss)를 확인하세요.
+다음은 Python과 매우 빠른 Cerebras provider를 사용하는 예제입니다. 더 많은 정보와 추가 예제는 [모델 카드의 inference providers 섹션](https://huggingface.co/openai/gpt-oss-120b?inference_api=true&inference_provider=auto&language=python&client=openai)과 [gpt-oss 모델들을 위한 가이드](https://huggingface.co/docs/inference-providers/guides/gpt-oss)를 확인하세요.
 
 ```python
 import os
