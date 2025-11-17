@@ -100,7 +100,7 @@ print(response)
 최신 transformers 릴리스(v4.55.1 이상)와 함께 `accelerate`, `kernels`를 설치해야 합니다. 또한 triton 3.4 이상을 설치하는 것을 권장하는데, 이를 통해 CUDA 하드웨어에서 mxfp4 양자화를 지원할 수 있습니다.
 
 ```bash
-pip install --upgrade accelerate transformers kernels
+pip install --upgrade accelerate transformers kernels "triton>=3.4"
 ```
 
 모델 가중치는 `mxfp4` 포맷으로 양자화되어 있으며, Hopper나 Blackwell 패밀리의 GPU와 호환됩니다. 이 형식은 원래 Hopper나 Blackwell 계열의 GPU에서만 사용 가능했지만, 이제는 이전 CUDA 아키텍처(Ada, Ampere, Tesla 포함)에서도 작동합니다. 여기에는 H100, H200, GB200 같은 데이터센터 카드와 50xx 시리즈 최신 소비자용 GPU가 포함됩니다. triton 3.4를 `kernels` 라이브러리와 함께 설치하면, 첫 사용 시 최적화된 `mxfp4` 커널을 다운로드하여 메모리를 크게 절약할 수 있습니다. 이러한 구성이 갖춰지면 16GB RAM을 가진 GPU에서도 20B 모델을 실행할 수 있습니다. 여기에는 많은 소비자용 그래픽 카드(3090, 4090, 5080)는 물론 Colab과 Kaggle도 포함됩니다!
