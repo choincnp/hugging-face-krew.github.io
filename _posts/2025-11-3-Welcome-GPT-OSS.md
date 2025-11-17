@@ -425,7 +425,7 @@ tokenizer.apply_chat_template(
 ```
 
 ## Transformers를 사용한 도구 사용
-GPT OSS는 두 가지 종류의 도구를 지원합니다: "내장" 도구인 browser와 python, 그리고 사용자가 제공하는 커스텀 도구입니다. 내장 도구를 활성화하려면 아래처럼 채팅 템플릿의 `builtin_tools` 인자에 이름 목록을 리스트로 전달하세요. 커스텀 도구를 전달하려면, `tools` 인자를 사용하여 JSON 스키마 형식으로 전달하거나, 타입 힌트와 docstring을 포함한 파이썬 함수로 전달할 수 있습니다. 자세한 내용은 [채팅 템플릿 도구 문서](https://huggingface.co/docs/transformers/en/chat_extras)를 참조하거나, 아래 예제를 수정하면 됩니다:
+GPT OSS는 두 가지 종류의 도구를 지원합니다: "내장" 도구인 browser와 python, 그리고 사용자가 제공하는 커스텀 도구입니다. 내장 도구를 활성화하려면 아래처럼 채팅 템플릿의 `builtin_tools` 인자에 이름 목록을 리스트로 전달하세요. 커스텀 도구를 전달하려면, `tools` 인자를 사용하여 JSON 스키마 형식으로 전달하거나, 타입 힌트와 docstring을 포함한 Python 함수로 전달할 수 있습니다. 자세한 내용은 [채팅 템플릿 도구 문서](https://huggingface.co/docs/transformers/en/chat_extras)를 참조하거나, 아래 예제를 수정하면 됩니다:
 
 ```python
 def get_current_weather(location: str):
