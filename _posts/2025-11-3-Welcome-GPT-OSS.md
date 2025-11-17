@@ -137,7 +137,7 @@ print(tokenizer.decode(generated[0][inputs["input_ids"].shape[-1]:]))
 ```
 
 ### Flash Attention 3
-이 모델들은 attention sinks 기법을 사용하는데, 이는vLLM 팀이 Flash Attention 3와 호환되도록 만든 기법입니다. 우리는 그들의 최적화된 커널을 [kernels-community/vllm-flash-attn3](https://huggingface.co/kernels-community/vllm-flash-attn3)에 패키징하고 통합했습니다. 작성 시점 기준으로 이 초고속 커널은 PyTorch 2.7과 2.8에서 Hopper 카드로 테스트되었습니다. Hopper 카드(예: H100 또는 H200)에서 모델을 실행하는 경우, `pip install --upgrade kernels`를 실행하고 코드에 다음 줄을 추가해야 합니다:
+이 모델들은 attention sinks 기법을 사용하는데, 이는 vLLM 팀이 Flash Attention 3와 호환되도록 만든 기법입니다. 우리는 그들의 최적화된 커널을 [kernels-community/vllm-flash-attn3](https://huggingface.co/kernels-community/vllm-flash-attn3)에 패키징하고 통합했습니다. 작성 시점 기준으로 이 초고속 커널은 PyTorch 2.7과 2.8에서 Hopper 카드로 테스트되었습니다. Hopper 카드(예: H100 또는 H200)에서 모델을 실행하는 경우, `pip install --upgrade kernels`를 실행하고 코드에 다음 줄을 추가해야 합니다:
 
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
