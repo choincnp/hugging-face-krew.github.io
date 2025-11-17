@@ -13,7 +13,7 @@ _이 글은 Hugging Face 블로그의 [Welcome GPT OSS, the new open-source mode
 
 ---
 # 들어가며
-GPT OSS는 OpenAI가 공개한 대망의 오픈 웨이트 모델로, 강력한 추론 능력과 에이전트 태스크, 그리고 다양한 개발자의 사용 사례를 위해 설계되었습니다. 
+GPT OSS는 OpenAI가 공개한 대망의 오픈 가중치(open-weights) 모델로, 강력한 추론 능력과 에이전트 작업, 그리고 다양한 개발자의 사용 사례를 위해 설계되었습니다. 
 
 이 모델은 두 가지 버전으로 구성되었습니다: 
 - 117B 파라미터의 대형 모델([gpt-oss-120b](https://hf.co/openai/gpt-oss-120b))
