@@ -8,11 +8,11 @@ image: assets/images/blog/posts/2025-11-17-hf_translation_hub_mcp_design_and_too
 * TOC
 {:toc}
 <!--toc-->
-_이 글은 Hugging Face 번역 MCP 서버의 개발 전략과 개발 도구 선정 과정을 다루는 글입니다._
+
 
 ---
 
-> Hugging Face MCP 서버 구축 단계별 고려사항(전송/통신 방식 등)과 MCP 서버 개발 도구(Gradio, FastMCP, Python/TypeScript SDK) 도입 관련해서 작성했습니다. Hugging Face 블로그의 [Building the Hugging Face MCP Server](https://huggingface.co/blog/building-hf-mcp)([[한국어 번역] Hugging Face 서버 구축기](https://hugging-face-krew.github.io/building-hf-mcp-ko/))을 참고하여 MCP 서버 설계 전략을 수립했습니다.
+> Hugging Face 번역 MCP 서버 구축 단계별 고려사항(전송/통신 방식 등)과 MCP 서버 개발 도구(Gradio, FastMCP, Python/TypeScript SDK) 도입 관련해서 작성했습니다. Hugging Face 블로그의 [Building the Hugging Face MCP Server](https://huggingface.co/blog/building-hf-mcp)([[한국어 번역] Hugging Face 서버 구축기](https://hugging-face-krew.github.io/building-hf-mcp-ko/))을 참고하여 MCP 서버 설계 전략을 수립했습니다.
 
 # 1. MCP 서버 의사결정 흐름에 따른 설계 전략
 
@@ -80,7 +80,7 @@ _이 글은 Hugging Face 번역 MCP 서버의 개발 전략과 개발 도구 선
 - **Progress Notification (진행 상황 알림)**
     - 장시간 작업의 진행 상황을 실시간으로 클라이언트에 전달하는 패턴
 
-> 💡 **번역 서버에 대한 상호작용 기능 선택** : 현재 단계에서는 **상호작용 기능을 구현하지 않아도 될 것 같습니다.**
+> 💡 **번역 서버에 대한 상호작용 기능 선택** : 현재 단계에서는 **상호작용 기능 미구현 예정**
 - 모두 짧은 요청–응답 흐름을 가지므로 추가 상호작용 기능이 필요하지 않음
 - 상호작용은 향후 번역 파이프라인 관련 추가 기능 개발 시 선택적으로 확장하는 것이 적합함
 
