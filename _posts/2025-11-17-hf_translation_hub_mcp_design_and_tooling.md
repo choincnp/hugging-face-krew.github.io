@@ -12,7 +12,21 @@ image: assets/images/blog/posts/2025-11-17-hf_translation_hub_mcp_design_and_too
 
 ---
 
-> Hugging Face 번역 MCP 서버 구축 단계별 고려사항(전송/통신 방식 등)과 MCP 서버 개발 도구(Gradio, FastMCP, Python/TypeScript SDK) 도입 관련해서 작성했습니다. Hugging Face 블로그의 [Building the Hugging Face MCP Server](https://huggingface.co/blog/building-hf-mcp)([[한국어 번역] Hugging Face 서버 구축기](https://hugging-face-krew.github.io/building-hf-mcp-ko/))을 참고하여 MCP 서버 설계 전략을 수립했습니다.
+> Hugging Face 번역 MCP 서버 설계 전략 및 개발 도구는 다음과 같은 **프로젝트 목표와 운영 원칙**을 중심으로 결정되었습니다.
+>
+> **(1) 문서 번역 자동화 및 범용성 확보**
+>
+> 번역 MCP 서버의 특정 문서에만 국한되지 않고 다른 오픈소스 문서에도 재사용 가능한 번역 도구를 만드는 것을 목표로 합니다. 이를 위해 기존의 단일 에이전트 기반 방식 대신 **각 기능(문서 검색, 번역, PR 등록, 리뷰)을 모듈화한 MCP 서버 아키텍처**를 도입했습니다.
+>
+> **(2) 필요한 기능만 구현하는 단순성 원칙 준수**
+>
+> 번역 문서 검색·번역·PR 생성·리뷰 자동화는 독립된 단일 작업이며, 복잡한 상호작용이나 세션 유지가 필요 없습니다. 이에 따라 MCP 서버는 **불필요한 기능을 배제하고 최소한의 통신 및 상태 관리 방식만 적용하는 단순 설계**를 채택했습니다.
+>
+> **(3) 빠른 배포와 반복 개발이 가능한 방식 선택**
+>
+> HuggingFace KREW·OSSCA 활동을 통해 매년 문서 번역이 이루지고 있기 때문에, 실제 번역 참여자들로부터 즉각적인 피드백을 받을 수 있습니다. 따라서 초기에는 **개발 속도가 빠른 Gradio 및 FastMCP 기반으로 프로토타입을 구성**하고, 추후 기능 확장 시 Python SDK로 전환하는 전략을 적용했습니다.
+>
+> 위와 같은 원칙에 따라 Hugging Face 블로그의 **[Building the Hugging Face MCP Server](https://huggingface.co/blog/building-hf-mcp)**(한국어 번역: **[Hugging Face 서버 구축기](https://hugging-face-krew.github.io/building-hf-mcp-ko/)**) 내용을 기반으로 전송 방식, 통신 패턴, 상태 관리, 개발 도구를 비교·검토하고 MCP 서버 설계 전략을 수립했습니다.
 
 # 1. MCP 서버 의사결정 흐름에 따른 설계 전략
 
