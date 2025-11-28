@@ -119,7 +119,7 @@ evaluate_handler = pq.GalileoPromptCallback(
     )
 ```
 
-#### 4.  LLM 초기화
+#### 4. LLM 초기화
 - 평가에 사용할 LLM을 초기화
   - `temperature=0.0`: deterministic (같은 입력에 항상 같은 출력)
   - `max_tokens=4000`: 응답 최대 길이
