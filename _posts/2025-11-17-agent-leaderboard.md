@@ -216,7 +216,7 @@ LLM 기반 평가(LLM-Judge)는 다양한 시나리오에서 에이전트의 도
 
 | 평가 항목   | 요약         | 설명                                          | 데이터 셋                                                                     |
 | ------- | ---------- | ------------------------------------------- | ------------------------------------------------------------------------- |
-| 기본 대화   | 다중 턴 문맥 유지 | 여러 턴에 걸쳐 함수 호출 수행 및 문맥 유지. 대화형 애플리케이션 필수 능력 | `[BFCL_v3_multi_turn_base_single_func_call, toolace_single_func_call]`    |
+| 기본 대화   | 멀티 턴 문맥 유지 | 여러 턴에 걸쳐 함수 호출 수행 및 문맥 유지. 대화형 애플리케이션 필수 능력 | `[BFCL_v3_multi_turn_base_single_func_call, toolace_single_func_call]`    |
 | 복합 상호작용 | 전반적 강건성 평가 | 여러 도전 요소를 결합하여 모델의 강건성과 복합 시나리오 처리 능력 평가    | `[BFCL_v3_multi_turn_base_multi_func_call, BFCL_v3_multi_turn_composite]` |
 
 
