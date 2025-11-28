@@ -18,7 +18,7 @@ Leaderboard: Evaluating AI Agents in Multi-Domain Scenarios](https://huggingface
 
 젠슨 황(Jensen Huang)은 AI 에이전트를 “디지털 노동력(digital workforce)”이라고 불렀습니다. 이러한 의견은 그만의 생각이 아닙니다. 사티아 나델라(Satya Nadella) 역시 에이전트가 비즈니스 운영 방식을 근본적으로 바꿀 것이라고 믿고 있습니다.  
 
-이러한 에이전트들은 외부 도구 및 API와 상호작용할 수 있어, 실질적인 응용 가능성을 크게 확장합니다. 그러나 여전히 완벽과는 거리가 멀며, 복잡한 상호작용 때문에 에이전트들의 성능을 평가하는 일은 어렵습니다.  
+이러한 에이전트들은 외부 도구 및 API와 상호작용할 수 있어, 실질적인 응용 가능성을 크게 확장합니다. 그러나 여전히 완벽함과는 거리가 멀며, 복잡한 상호작용 때문에 에이전트들의 성능을 평가하는 일은 어렵습니다.  
 
 우리의 에이전트 리더보드(Agent Leaderboard)는 Galileo의 도구 선택 품질(tTool Selection Quality, 이하 TSQ) 지표를 사용해 다면적으로 LLM들이 도구 기반 상호작용을 어떻게 처리하는지 명확히 평가합니다.  
 
