@@ -107,7 +107,7 @@ chainpoll_tool_selection_scorer = pq.CustomizedChainPollScorer(
             )
 ```
 
-#### 3.  평가 핸들러 설정
+#### 3. 평가 핸들러 설정
 - `GalileoPromptCallback`: 평가 과정에서 ChainPoll 점수를 기록하고 관리
   - `scorers`에 ChainPoll scorer를 넣어 LLM이 도구 선택 시 평가하도록 함
 
