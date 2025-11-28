@@ -20,7 +20,7 @@ Leaderboard: Evaluating AI Agents in Multi-Domain Scenarios](https://huggingface
 
 이러한 에이전트들은 외부 도구 및 API와 상호작용할 수 있어, 실질적인 응용 가능성을 크게 확장합니다. 그러나 여전히 완벽함과는 거리가 멀며, 복잡한 상호작용 때문에 에이전트들의 성능을 평가하는 일은 어렵습니다.  
 
-우리의 에이전트 리더보드(Agent Leaderboard)는 Galileo의 도구 선택 품질(tTool Selection Quality, 이하 TSQ) 지표를 사용해 다면적으로 LLM들이 도구 기반 상호작용을 어떻게 처리하는지 명확히 평가합니다.  
+우리의 에이전트 리더보드(Agent Leaderboard)는 Galileo의 도구 선택 품질(Tool Selection Quality, 이하 TSQ) 지표를 사용해 다방면으로 LLM들이 도구 기반 상호작용을 어떻게 처리하는지 명확히 평가합니다.  
 
 우리가 이 리더보드를 만든 이유는 단순합니다:  **“AI 에이전트는 실제 비즈니스 시나리오에서 얼마나 잘 작동하는가?”**  
 학술적 벤치마크가 기술적 역량을 알려준다면, 우리는 다양한 실제 사용 사례에서 어떤 모델이 유용한지를 알고자 합니다.  
