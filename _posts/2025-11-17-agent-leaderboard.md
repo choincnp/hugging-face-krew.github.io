@@ -339,8 +339,8 @@ LLM 기반 평가(LLM-Judge)는 다양한 시나리오에서 에이전트의 도
 
 - **BFCL** — 함수 호출 능력을 종합적으로 평가할 수 있는 데이터셋을 만든 Berkeley AI Research팀에 감사드립니다.
 - **τ-bench** — 실제 도구 사용 시나리오에 초점을 맞춘 벤치마크를 개발한 Sierra Research 팀에 감사드립니다.
-- **xLAM** — 21개 도메인에 걸친 방대한 Large Action Model*데이터셋을 구축한 Salesforce AI Research 팀에 감사드립니다.
-- **ToolACE** — 390개 이상의 도메인을 포괄하는**API 상호작용 데이터셋을 개발한 ToolACE 팀에 감사드립니다.
+- **xLAM** — 21개 도메인에 걸친 방대한 Large Action Model 데이터셋을 구축한 Salesforce AI Research 팀에 감사드립니다.
+- **ToolACE** — 390개 이상의 도메인을 포괄하는 API 상호작용 데이터셋을 개발한 ToolACE 팀에 감사드립니다.
 
 이 데이터셋들은 언어 모델의 도구 호출 능력을 평가하기 위한 포괄적이고 체계적인 평가 프레임워크를 구축하는 데 핵심적인 역할을 했습니다.
 
