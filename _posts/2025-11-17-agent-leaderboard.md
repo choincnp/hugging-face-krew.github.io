@@ -48,7 +48,7 @@ Leaderboard: Evaluating AI Agents in Multi-Domain Scenarios](https://huggingface
 
 도구 호출의 복잡성은 이제 단순한 API 호출 수준을 훨씬 넘어섰습니다. 다양한 시나리오에서 AI 에이전트는 도구를 언제 사용할지, 어떤 도구가 적합한지, 어떻게 사용해야할지 올바르게 판단해야 합니다.
 
-이를 정교하게 평가하기 위해, 도구 호출 과정에서 고려해야할 핵심 요소를 네 가지로 살펴볼 수 있습니다: 시나리오 인식(Scenario Recognition), 도구 선택의 역학(Tool Selection Dynamics), 매개변수 처리(Parameter Handling), 순차적 의사결정(Sequential Decision Making)
+이를 정교하게 평가하기 위해, 도구 호출 과정에서 고려해야할 핵심 요소를 시나리오 인식(Scenario Recognition), 도구 선택의 역학(Tool Selection Dynamics), 매개변수 처리(Parameter Handling), 순차적 의사결정(Sequential Decision Making) 네 가지로 살펴볼 수 있습니다.
 
 
 | 항목                                        | 요약                                   | 상세                                                                                                                                           |
