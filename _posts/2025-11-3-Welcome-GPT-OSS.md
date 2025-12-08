@@ -8,7 +8,6 @@ image: assets/images/blog/posts/2025-11-3-Welcome-GPT-OSS/thumbnail.png
 * TOC
 {:toc}
 <!--toc-->
-
 _이 글은 Hugging Face 블로그의 [Welcome GPT OSS, the new open-source model family from OpenAI!](https://huggingface.co/blog/welcome-openai-gpt-oss)를 한국어로 번역한 글입니다._
 
 ---
