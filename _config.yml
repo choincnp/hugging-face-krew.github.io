@@ -98,6 +98,13 @@ authors:
     email: whdudwns7777@gmail.com
     web: https://github.com/choincnp
     description: "안녕하세요! genAI 및 Agent에 관심있는 조영준입니다!"
+  harheem:
+    name: Harheem Kim
+    display_name: harheem
+    avatar: 'assets/images/author/harheem.png'
+    email: shhr.kre@gmail.com
+    web: https://www.linkedin.com/in/harheemk
+    description: "안녕하세요. Hugging Face KREW를 애정하는 AI Engineer 김하림입니다."
 
 
 # Social
