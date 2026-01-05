@@ -476,7 +476,7 @@ Hugging Face와 관련된 노드는 `Hugging Face Inference Model`  노드도 �
 여기서 발급받은 토큰은 노드의 `Predefined Credential Type`에서 `HuggingFaceApi account`인증을 통해 지속적으로 사용할 수 있습니다.
 ![](https://i.imgur.com/ogytusC.png)
 
-아래는 요약 노드를 정리했습니다. 저는 실험을 위해  `Meta-Llamaa-3.3-70B-Instruct` 모델을 사용했지만, 실험해보고 싶은 여러 모델을 사용해 보세요!
+아래는 요약 노드를 정리했습니다. 저는 실험을 위해  `Meta-Llama-3.3-70B-Instruct` 모델을 사용했지만, 실험해보고 싶은 여러 모델을 사용해 보세요!
 ```yaml
 Type: HTTP Request
 Parameters:
