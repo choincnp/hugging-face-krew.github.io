@@ -66,7 +66,7 @@ docker run -d --restart always --name n8n -p 5678:5678 -v n8n_data:/home/node/.n
 ```
 명령어를 설명하자면 다음과 같습니다.
 - docker run : 컨테이너 실행
-- -d : 백그라운드로 항상 실행
+- -d : 컨테이너를 백그라운드로 항상 실행
 - --restart always : PC가 켜질때마다 무조건 다시 시작
 - --name n8n : 컨테이너의 이름으로 n8n을 사용
 - `-p 5678 : 5678 ` : 내 PC의 5678번 포트를 컨테이너의 5678번 포트로 연결
