@@ -171,7 +171,7 @@ docker compose up -d
 이제, `localhost:4040`(ngrok 상태창)에 접속해서 Endpoints를 확인하면 다음의 화면이 보이고, 여기서 보이는 Endpoint를 이용해 외부에서 들어가 봅시다.(보통 핸드폰의 셀룰러 데이터 환경에서 들어가보는게 가장 확실합니다!)
 ![](https://i.imgur.com/KkYMT3o.png)
 
-# RSS FEED
+# RSS Feed
 n8n을 성공적으로 구동하였다면, 다음으로는 본격적으로 자동화를 구현해 볼 시간입니다. 블로그를 자동으로 fetch하려는 경우 몇 가지 방법이 있지만, RSS 방식을 이용해 보겠습니다. RSS(Really Simple Syndication 또는 Rich Site Summary)는 웹사이트의 최신 콘텐츠를 구독자에게 자동으로 전달하는 표준 형식입니다. 블로그, 뉴스 사이트, 팟캐스트 등이 새로운 게시물을 발행하면, RSS 피드를 통해 구독자들이 자동으로 업데이트를 받을 수 있습니다. 
 ## RSS의 작동 원리
 RSS는 XML 형식으로 구성된 파일로, 다음과 같은 정보를 포함합니다:
